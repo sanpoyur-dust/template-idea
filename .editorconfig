@@ -10,6 +10,8 @@ indent_style = space
 insert_final_newline = true
 max_line_length = 120
 tab_width = 2
+# no trailing whitespace is also important for git
+trim_trailing_whitespace = true
 ij_continuation_indent_size = 2
 ij_formatter_off_tag = @fmt:off
 ij_formatter_on_tag = @fmt:on
