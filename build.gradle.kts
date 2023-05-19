@@ -6,8 +6,8 @@ plugins {
 }
 
 allprojects {
-  group = "org.example"
-  version = "0.0-SNAPSHOT"
+  group = "org.yurusanp"
+  version = "0.1.0" + "-SNAPSHOT"
 
   repositories {
     mavenCentral()
