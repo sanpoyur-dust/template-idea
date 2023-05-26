@@ -1,6 +1,5 @@
 plugins {
   idea
-  `java-library`
   alias(libs.plugins.kotlin.jvm)
   alias(libs.plugins.dokka)
 }
@@ -14,19 +13,26 @@ allprojects {
   }
 }
 
-dependencies {
-  testImplementation(libs.kotest.runner.junit5)
-}
+subprojects {
+  apply {
+    plugin("org.jetbrains.kotlin.jvm")
+    plugin("org.jetbrains.dokka")
+  }
 
-kotlin {
-  jvmToolchain(17)
-  sourceSets.all {
-    languageSettings {
-      languageVersion = "2.0"
+  kotlin {
+    jvmToolchain(17)
+    sourceSets.all {
+      languageSettings {
+        languageVersion = "2.0"
+      }
     }
   }
-}
 
-tasks.withType<Test>().configureEach {
-  useJUnitPlatform()
+  dependencies {
+    testImplementation(libs.kotest.runner.junit5)
+  }
+
+  tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
+  }
 }
