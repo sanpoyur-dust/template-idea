@@ -29,7 +29,7 @@ subprojects {
   }
 
   dependencies {
-    testImplementation(libs.kotest.runner.junit5)
+    testImplementation(rootProject.libs.kotest.runner.junit5)
   }
 
   tasks.withType<Test>().configureEach {
